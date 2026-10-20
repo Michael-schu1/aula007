@@ -35,11 +35,12 @@
             android:text="Descrição" />
 
         <EditText
-            android:id="@+id/editDesc"
+            android:id="@+id/editDescricao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="text" />
+            android:inputType="text"
+            android:text=""/>
 
         <TextView
             android:id="@+id/textView5"
@@ -48,11 +49,12 @@
             android:text="Quantidade" />
 
         <EditText
-            android:id="@+id/editQntd"
+            android:id="@+id/editQuantidade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="text" />
+            android:inputType="number"
+            android:text=""/>
 
         <TextView
             android:id="@+id/textView7"
@@ -61,17 +63,25 @@
             android:text="Valor" />
 
         <EditText
-            android:id="@+id/editVal"
+            android:id="@+id/editValor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="text" />
+            android:inputType="text"
+            android:text=""/>
 
         <Button
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#43545B"
-            android:text="Cadastrar" />
+            android:text="Cadastrar"
+            android:onClick="salvarProduto"/>
+
+        <TextView
+            android:id="@+id/viewProdutos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="produtos" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
