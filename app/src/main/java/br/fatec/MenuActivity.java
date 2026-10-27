@@ -27,4 +27,8 @@ public class MenuActivity extends AppCompatActivity {
     public void abrirProduto(View view){
         startActivity(new Intent(this, ProdutoActivity.class));
     }
+
+    public void abrirVenda(View view) {
+        startActivity (new Intent (this, VendaActivity.class));
+    }
 }

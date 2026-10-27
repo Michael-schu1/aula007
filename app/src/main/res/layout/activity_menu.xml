@@ -44,5 +44,13 @@
             android:onClick="abrirProduto"
             android:layout_marginTop="20dp"
             android:text="Produtos" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#43545B"
+            android:text="Venda"
+            android:onClick="abrirVenda"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

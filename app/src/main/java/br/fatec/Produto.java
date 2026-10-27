@@ -28,4 +28,9 @@ public class Produto {
     public void setQuantidade(Integer quantidade) {
         this.quantidade = quantidade;
     }
+
+    @Override
+    public String toString() {
+        return descricao + "  " + valor+"R$";
+    }
 }
