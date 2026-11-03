@@ -31,4 +31,6 @@ public class MenuActivity extends AppCompatActivity {
     public void abrirVenda(View view) {
         startActivity (new Intent (this, VendaActivity.class));
     }
+
+    public void abrirListaProdutos(View view) {startActivity(new Intent( this, ListaProdutosActivity.class));}
 }

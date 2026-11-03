@@ -1,0 +1,62 @@
+package br.fatec;
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class ListaProdutosActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_lista_produtos);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+        this.carregarCardsProdutos();
+    }
+    private void carregarCardsProdutos(){
+
+        LinearLayout container = findViewById(R.id.listaProdutos);
+
+        for (Produto p : ProdutoActivity.listaProdutos) {
+
+            LinearLayout card = new LinearLayout(this);
+            card.setOrientation(LinearLayout.VERTICAL);
+            LinearLayout.LayoutParams parametros = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
+            parametros.setMargins(0,0,0,16);
+            card.setLayoutParams(parametros);
+
+            card.setPadding(20,20,20,20);
+
+            TextView descricao = new TextView(this);
+            descricao.setText(p.getDescricao());
+            descricao.setTextSize(15);
+
+            TextView valor = new TextView(this);
+            valor.setText(p.getValor().toString());
+
+            card.addView(descricao);
+            card.addView(valor);
+
+            container.addView(card);
+
+        }
+    }
+
+
+}
