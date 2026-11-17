@@ -26,21 +26,31 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private static final String USUARIO = "admin";
-    private  static  final String SENHA = "fatec";
-
     public void abrirMenu(View view) {
-
         EditText editUsuario = findViewById(R.id.editUsuario);
         EditText editSenha = findViewById(R.id.editSenha);
 
-        if (USUARIO.equals(editUsuario.getText().toString()) &&
-                SENHA.equals(editSenha.getText().toString())) {
+        String username = editUsuario.getText().toString().trim();
+        String senha = editSenha.getText().toString().trim();
 
-
-            startActivity(new Intent(this, MenuActivity.class));
-        }else {
-            Toast.makeText(this, "Usuario e/ou senha inválida", Toast.LENGTH_LONG).show();
+        boolean authenticated = false;
+        for (User u : DataRepository.usuarios) {
+            if (u.getUsername().equals(username) && u.getPassword().equals(senha)) {
+                authenticated = true;
+                DataRepository.currentUser = u.getName();
+                break;
+            }
         }
+
+        if (authenticated) {
+            Toast.makeText(this, "Login realizado com sucesso!", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, MenuActivity.class));
+        } else {
+            Toast.makeText(this, "Usuário e/ou senha inválidos", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void abrirCadastroUsuario(View view) {
+        startActivity(new Intent(this, CadastroUsuarioActivity.class));
     }
 }

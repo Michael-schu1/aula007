@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#020617"
+    tools:context=".SobreAppActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/_67_da_silva" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Propósito e Justificativa do Aplicativo"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:lineSpacingExtra="6dp"
+                android:text="O CineStore é um aplicativo mobile desenvolvido com o propósito específico de gerenciar o catálogo, a comercialização e a locação de filmes digitais de forma prática, rápida e intuitiva. A justificativa para a criação deste sistema reside na crescente demanda por plataformas centralizadas de entretenimento sob demanda, permitindo que usuários gerenciem suas contas, explorem lançamentos cinematográficos, efetuem compras de licenças de filmes em tempo real e consultem histórico de pedidos de maneira totalmente integrada e segura, aplicando conceitos avançados de navegação estruturada, persistência em memória e componentização moderna em Android."
+                android:textColor="#93C5FD"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

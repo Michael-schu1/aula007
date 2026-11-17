@@ -3,6 +3,7 @@ package br.fatec;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,15 +23,30 @@ public class MenuActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        TextView txtBemVindo = findViewById(R.id.txtBemVindo);
+        if (txtBemVindo != null && !DataRepository.currentUser.isEmpty()) {
+            txtBemVindo.setText("Bem-vindo(a), " + DataRepository.currentUser + "!");
+        }
     }
 
-    public void abrirProduto(View view){
-        startActivity(new Intent(this, ProdutoActivity.class));
+    public void abrirCadastroFilme(View view) {
+        startActivity(new Intent(this, CadastroFilmeActivity.class));
     }
 
-    public void abrirVenda(View view) {
-        startActivity (new Intent (this, VendaActivity.class));
+    public void abrirListaFilmes(View view) {
+        startActivity(new Intent(this, ListaFilmesActivity.class));
     }
 
-    public void abrirListaProdutos(View view) {startActivity(new Intent( this, ListaProdutosActivity.class));}
+    public void abrirCompra(View view) {
+        startActivity(new Intent(this, CompraFilmeActivity.class));
+    }
+
+    public void abrirHistorico(View view) {
+        startActivity(new Intent(this, HistoricoComprasActivity.class));
+    }
+
+    public void abrirSobre(View view) {
+        startActivity(new Intent(this, SobreAppActivity.class));
+    }
 }
